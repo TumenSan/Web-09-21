@@ -8,8 +8,10 @@ body {
   padding: 0;
   
   color: white; /* Цвет основного текста */ 
+  background-color: white;
 }
 .content {
+  padding: 1px 25px;
   width: 500px;
   margin: 0 auto;
 }
@@ -56,7 +58,7 @@ li:nth-child(2) {
   letter-spacing: 5px;
 }
 aside {
-  
+
 }
 td {
   width: 60px; 
