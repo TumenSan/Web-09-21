@@ -15,20 +15,21 @@ header{
 	background-color: #C8FC98;
 	line-height: 22px;
 	float: left;
-	padding: 8px;
+	padding: 0 8px 8px 8px;
 	width: 25%;
 	height: 25%;
+	margin: 0 7px 0 0;
 }
 .Middle_Column{
 	line-height: 22px;
-	padding: 8px;
 }
 .Right_Column{
 	line-height: 22px;
 	width: 200px;
 	background-color: #FDE95E;
 	float: right;
-	padding: 8px;
+	padding: 0 8px 8px 8px;
+	margin: 0 0 0 7px;
 }
 
 footer{
