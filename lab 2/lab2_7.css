@@ -1,0 +1,44 @@
+body{
+	color: white;
+}
+.block1{
+	position: static;
+	background-color: blueviolet;
+	height: 100px;
+	width: 150px;
+}
+.block2{
+	position: relative;
+	background-color: darkred;
+	height: 100px;
+	width: 150px;
+}
+.block3{
+	position: relative;
+	background-color: peru;
+	height: 100px;
+	width: 150px;
+	left: 30px;
+	bottom: 30px;
+}
+.block4{
+	position: relative;
+	background-color: indianred;
+	height: 350px;
+	width: 550px;
+}
+.block5{
+	position: relative;
+	background-color: indigo;
+	height: 200px;
+	width: 300px;
+	float: right;
+	top: 100px;
+}
+.block6{
+	position: fixed;
+	background-color: green;
+	height: 100px;
+	right: 0px;
+	bottom: 0px;
+}
