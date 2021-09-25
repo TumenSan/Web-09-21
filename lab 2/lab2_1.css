@@ -32,4 +32,6 @@ footer{
 }
 a{
 	color: #FDE95E;
+	position: relative;
+	top: 4px;
 }
