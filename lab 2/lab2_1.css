@@ -2,7 +2,7 @@ body{
 	margin: 0;
 }
 .color_red{
-	color:  red;
+	color: red;
 }
 header{
 	background-color: #EAEAEA;
@@ -17,19 +17,11 @@ header{
 	float: left;
 	padding: 8px;
 	width: 200px;
+	margin: 0 7px 0 0;
 }
 .Middle_Column{
 	line-height: 22px;
-	padding: 8px;
 }
-.Right_Column{
-	line-height: 22px;
-	width: 200px;
-	background-color: #FDE95E;
-	float: right;
-	padding: 8px;
-}
-
 footer{
 	background-color: black;
 	margin: 0;
