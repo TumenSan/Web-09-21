@@ -1,0 +1,33 @@
+body{
+	color: black;
+}
+.AllBlocks{
+	display: flex;
+	background-color: aqua;
+	border: 1px solid forestgreen;
+}
+.block1{
+	position: static;
+	background-color: bisque;
+	height: 80px;
+	width: 25%;
+}
+.block2{
+	background-color: darkgray;
+	width: 80%;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+ul{
+	margin-right:60px;
+	margin-top:0px;
+	padding-top:13px;
+}
+@media screen and (max-width: 1300px){
+	.AllBlocks{
+		display: block;
+	}
+	.block2{
+		margin-left: 0px;
+	}
+}
