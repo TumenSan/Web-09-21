@@ -1,0 +1,46 @@
+body{
+	color: black;
+}
+.MainBlock{
+	display: flex;
+	background-color: aqua;
+	border: 1px solid forestgreen;
+}
+.block1{
+	position: static;
+	background-color: bisque;
+	width: 25%;
+}
+.block2{
+	background-color: darkgray;
+	width: 75%;
+}
+@media screen and (max-width: 1300px){
+	.MainBlock{
+		display: block;
+	}
+	.block1{
+
+		width: 100%;
+	}
+	.block2{
+		width: 100%;
+	}
+	ul{
+		display: flex;
+	}
+	li {
+    	list-style-type: none; /* Убираем маркеры */
+    	margin-left: 5px;
+    }
+}
+@media screen and (min-width: 1300px){
+	.block1{
+		height: 100px;
+	}
+	ul{
+		margin-right:60px;
+		margin-top:0px;
+		padding-top:25px;
+	}
+}
