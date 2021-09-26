@@ -1,0 +1,11 @@
+.block{
+	background-color: aquamarine;
+	height: 100px;
+	width: 180px;
+	margin: 20px;
+	display: inline-block;
+}
+.BlockLine{
+	background-color: bisque;
+	width: 100%;
+}
