@@ -1,0 +1,169 @@
+* {
+	font-family: Arial, helvetica sans-serif;
+}
+body {
+	margin: 0;
+	background-color: #edeef0;
+}
+content {
+	margin: 0 auto;
+}
+@media screen and (min-width: 650px){
+    content {
+        display: flex;
+    }
+}
+@media screen and (max-width: 650px){
+    content {
+        display: block;
+    }
+}
+header {
+	background-color: #507299;
+	height: 40px;
+}
+.img1 {
+    padding: 7px 0 7px 13%;
+}
+.img2 {
+	padding: 7px 0 7px 1px;
+}
+.menu {
+	background-color: #edeef0;
+    width: 180px;
+    font-size: 14px;
+    margin-left: 18%;
+}
+@media screen and (max-width:650px){
+    .menu{
+      width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
+@media screen and (max-width:650px){
+    .navigate{
+      display: inline-block;
+      margin-left: 15px;
+    }
+}
+.navigate{
+    margin-left: 13px;
+    margin-top: 12px;
+    color: #2e5473;
+    padding: 4px;
+}
+@media screen and (max-width: 1000px){
+    .navigate {
+        display: inline-block;
+    }
+}
+.LineNews {
+    margin-left: 1%;
+	flex-direction: column;
+}
+@media screen and (max-width:650px){
+    .LineNews{
+      margin-left: 5%;
+    }
+}
+.LineNews1 {
+	background-color: white;
+    border: 2px solid #e1e5eb;
+    border-radius: 10px;
+    width: 400px;
+    margin: 10px;
+    padding: 15px;
+    margin-right: 18%;
+    text-align: justify;
+}
+.Line {
+	border: none; /* Убираем границу */
+    background-color: #d0d0d0; /* Цвет линии */
+    color: #d0d0d0; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.DownBlock {
+    display: flex;
+}
+.Like {
+    color: #507299;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.Comment {
+    color: #507299;
+    margin-top: 10px;
+    margin-left: 280px;
+}
+.RightBlocks {
+	flex-direction: column;
+    margin-left: 60%;
+    margin-top: 12px;
+}
+.RightBlock1 {
+	color: black;
+	background-color: white;
+    border: 2px solid #e1e5eb;
+    border-radius: 10px;
+    width: 150px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.RightBlock2 {
+	color: black;
+	background-color: white;
+    border: 2px solid #e1e5eb;
+    border-radius: 10px;
+    width: 150px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+@media screen and (max-width: 1000px){
+    .RightBlocks {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px){
+
+}
+footer {
+	height: 20px;
+	padding: 6px;
+	color: #d0d0d0;
+	background-color: white;
+    display: flex;
+}
+.FooterText {
+    padding: 2px 0;
+    position: relative;
+    margin: 0 auto;
+}
+.button{
+    position: absolute;
+    margin-left: 95%;
+    height: 20px;
+    width: 150px;
+    margin-top: 5px;
+}
+@media screen and (max-width: 1000px){
+    .button{
+        display: none;
+    }
+}
+.text_right {
+	text-align: right;
+}
+::selection{
+background-color: #edeef0 ;
+color: green;
+}
+.navigate:hover {
+    background-color: #e1e5eb;
+}
+.BackgroundColor {
+    background-color: #edeef0;
+}
