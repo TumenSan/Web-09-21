@@ -1,0 +1,44 @@
+body {
+	margin: 0;
+}
+.Block1 {
+	height: 100px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #b6f5f5;
+	
+	padding: 20px;
+	text-align: justify;
+}
+.Line {
+	border: none; /* Убираем границу */
+    background-color: black; /* Цвет линии */
+    color: #d0d0d0; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+    width: 840px;
+    margin-left: auto;
+	margin-right: auto;
+}
+#button1 {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	position: relative;
+	padding: 6px;
+	top: 15px;
+	background-color: #0c0;
+	color: white;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	border: 0px solid grey;
+}
+#PopupContent {
+	background-color: #e1ff73;
+	padding: 15px;
+	z-index: 1;
+	display: none;
+	position: fixed;
+	width: 400px;
+	height: 250px;
+	left: 0;
+	top: 0;
