@@ -9,7 +9,7 @@
 		<font size="5" color=black> <b> Новость 1 </b> </font> </br>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum suscipit sed delectus facere veritatis autem quisqem unde nam doloribus?
 
-		<button id = "button1" onclick="myFunction()">Открыть всплывающее окно</button>
+		<button id = "button1" onclick="myFunction1()">Открыть всплывающее окно</button>
 	</div>
 	<div class="Line"> </div>
 
@@ -17,7 +17,7 @@
 		<font size="5" color=black> <b> Новость 2 </b> </font> </br>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum suscipit sed delectus facere veritatis autem quisqem unde nam doloribus?
 
-		<button id = "button1" onclick="myFunction()">Открыть всплывающее окно</button>
+		<button id = "button1" onclick="myFunction2()">Открыть всплывающее окно</button>
 	</div>
 	<div class="Line"> </div>
 
@@ -25,18 +25,57 @@
 		<font size="5" color=black> <b> Новость 3 </b> </font> </br>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum suscipit sed delectus facere veritatis autem quisqem unde nam doloribus?
 
-		<button id = "button1" onclick="myFunction()">Открыть всплывающее окно</button>
+		<button id = "button1" onclick="myFunction3()">Открыть всплывающее окно</button>
 	</div>
 	<div class="Line"> </div>
-  
-<div id="PopupContent">
-	  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+
+<div id="PopupPage">  
+	<div class="PopupContent">
+		<div id="Text1">
+			<font size="6" color=black> <div class="CenterText"> <b> Новость 1 </b> </div> </font> </br>
+			Новость 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis! </br>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+		</div>
+	  <div id="Text2">
+			<font size="6" color=black> <div class="CenterText"> <b> Новость 2 </b> </div> </font> </br>
+			Новость 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. A ailas. </br>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+		</div>
+		<div id="Text3">
+			<font size="6" color=black> <div class="CenterText"> <b> Новость 3 </b> </div> </font> </br>
+			Новость 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis! </br>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+		</div>
+	</div>
 </div>
 
   <script>
-    function myFunction() {
-	  var x = document.getElementById("PopupContent");
+    function myFunction1() {
+	  var x = document.getElementById("PopupPage");
+	  var y = document.getElementById("Text1")
+	  y.style.display = "block";
+	  x.style.display = "none"; <!-- почему надо приравнивать none она же ведь итак none? -->
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } else {
+	    x.style.display = "none";
+	  }
+	}
+	function myFunction2() {
+	  var x = document.getElementById("PopupPage");
+	  var y = document.getElementById("Text2")
+	  y.style.display = "block";
+	  x.style.display = "none"; <!-- почему? -->
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } else {
+	    x.style.display = "none";
+	  }
+	}
+	function myFunction3() {
+	  var x = document.getElementById("PopupPage");
+	  var y = document.getElementById("Text3")
+	  y.style.display = "block";
 	  x.style.display = "none"; <!-- почему? -->
 	  if (x.style.display === "none") {
 	    x.style.display = "block";
