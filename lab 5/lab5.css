@@ -52,10 +52,12 @@ body {
 }
 .PopupContent {
 	background-color: #e1ff73;
+	position: relative;
+	margin: auto;
+	top: 30%;
 	padding: 20px;
 	width: 450px;
 	height: 250px;
-	margin: auto;
 }
 #Text1 {
 	display: none;
