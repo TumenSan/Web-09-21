@@ -29,7 +29,7 @@
 	</div>
 	<div class="Line"> </div>
 
-<div id="PopupPage">  
+<div id="PopupPage" onclick="myFunctionPopup()">  
 	<div class="PopupContent">
 		<div id="Text1">
 			<font size="6" color=black> <div class="CenterText"> <b> Новость 1 </b> </div> </font> </br>
@@ -51,38 +51,36 @@
 
   <script>
     function myFunction1() {
-	  var x = document.getElementById("PopupPage");
-	  var y = document.getElementById("Text1")
-	  y.style.display = "block";
-	  x.style.display = "none"; <!-- почему надо приравнивать none она же ведь итак none? -->
-	  if (x.style.display === "none") {
-	    x.style.display = "block";
-	  } else {
-	    x.style.display = "none";
-	  }
+	  var x1 = document.getElementById("PopupPage");
+	  var y1 = document.getElementById("Text1");
+	  y1.style.display = "block";
+	  x1.style.display = "block";
 	}
 	function myFunction2() {
-	  var x = document.getElementById("PopupPage");
-	  var y = document.getElementById("Text2")
-	  y.style.display = "block";
-	  x.style.display = "none"; <!-- почему? -->
-	  if (x.style.display === "none") {
-	    x.style.display = "block";
-	  } else {
-	    x.style.display = "none";
-	  }
+	  var x2 = document.getElementById("PopupPage");
+	  var y2 = document.getElementById("Text2");
+	  y2.style.display = "block";
+	  x2.style.display = "block";
 	}
 	function myFunction3() {
-	  var x = document.getElementById("PopupPage");
-	  var y = document.getElementById("Text3")
-	  y.style.display = "block";
-	  x.style.display = "none"; <!-- почему? -->
-	  if (x.style.display === "none") {
-	    x.style.display = "block";
-	  } else {
-	    x.style.display = "none";
+	  var x3 = document.getElementById("PopupPage");
+	  var y3 = document.getElementById("Text3");
+	  y3.style.display = "block";
+	  x3.style.display = "block";
+	}
+	function myFunctionPopup() {
+		var z1 = document.getElementById("PopupPage");
+		var ztext1 = document.getElementById("Text1");
+		var ztext2 = document.getElementById("Text2");
+		var ztext3 = document.getElementById("Text3");
+		if (z1.style.display === "block") {
+	    z1.style.display = "none";
+	    ztext1.style.display = "none";
+	    ztext2.style.display = "none";
+	    ztext3.style.display = "none";
 	  }
 	}
+	
   </script>
 </body>
 
@@ -115,3 +113,15 @@
 	}
   </script>
   -->
+
+<!-- 
+  <script type="text/javascript">
+		var z = document.getElementById("p1").innerHTML="1";
+	</script>
+	-->
+
+<!-- 
+	<script>
+document.write(Date());
+</script>
+-->
