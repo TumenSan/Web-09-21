@@ -13,52 +13,39 @@
 		</div>
 		<div class="BlockPicture">
 			<div id="LeftCat">
-				<img id="img1" src="cat.jpg" alt="logo picture" width="60%" />
+				<img id="img1" src="cat.jpg" alt="logo picture"/>
 			</div>
 			<div id="RightDog">
-				<img id="img2" src="dog.jpg" alt="logo picture" width="60%" />
+				<img id="img2" src="dog.jpg" alt="logo picture"/>
 			</div>
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		/*
-		document.querySelectorAll('.Header')[0].oncliсk = function() {LeftClick()};
-        document.querySelectorAll('.Header')[1].oncliсk = function() {CenterClick()};
-        document.querySelectorAll('.Header')[2].oncliсk = function() {RightClick()};
-        function LeftClick(){
-                    document.getElementsByClassName("RightDog").querySelector('img2').style.display = 'none';
-                    document.getElementsByClassName("LeftCat").querySelector('img1').style.display = 'block';
-            }
-        function CenterClick(){
-                    document.getElementsByClassName("RightDog").querySelector('img2').style.display = 'block';
-                    document.getElementsByClassName("LeftCat").querySelector('img1').style.display = 'block';
-            }
-        function RightClick(){
-                    document.getElementById('first').querySelector('img').style.display = 'none';
-                    document.getElementById('second').querySelector('img').style.display = '';
-                    document.getElementById('first').style.width = '100px';
-                    document.getElementById('second').style.width = '800px';
-            }*/
-
 
 		function LeftClick() {
-			document.getElementsById("LeftCat").style.width = "652px";
-			document.getElementsById("RightDog").style.width = "20px";
-			document.getElementsById("img1").style.display = "block"; 
-			document.getElementsById("img2").style.display = "none";
+			document.getElementById("LeftCat").style.width = "93%";
+			document.getElementById("RightDog").style.width = "7%";
+			document.getElementById("img1").style.display = "block";
+			document.getElementById("img1").style.width = "70%"; 
+			document.getElementById("img2").style.display = "none";
 		}
 		function CenterClick() {
-			document.getElementsById("LeftCat").style.width = "336px";
-			document.getElementsById("RightDog").style.width = "336px";
-			document.getElementsById("img1").style.display = "block"; 
-			document.getElementsById("img2").style.display = "block";			
+			document.getElementById("LeftCat").style.width = "50%";
+			document.getElementById("RightDog").style.width = "50%";
+			document.getElementById("img1").style.display = "block";
+			document.getElementById("img1").style.width = "90%"; 
+			document.getElementById("img2").style.display = "block";
+			document.getElementById("img2").style.width = "90%";
+			var x = document.getElementById("img2").style.height;
+			document.getElementById("img1").style.height = x;			
 		}
 		function RightClick() {
-			document.getElementsById("LeftCat").style.width = "20px";
-			document.getElementsById("RightDog").style.width = "652px";
-			document.getElementsById("img1").style.display = "none"; 
-			document.getElementsById("img2").style.display = "block";
+			document.getElementById("LeftCat").style.width = "7%";
+			document.getElementById("RightDog").style.width = "93%";
+			document.getElementById("img1").style.display = "none"; 
+			document.getElementById("img2").style.display = "block";
+			document.getElementById("img2").style.width = "70%";
 		}
 	</script>
 </body>
