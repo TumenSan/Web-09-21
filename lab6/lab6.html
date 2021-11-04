@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title> lab 6 </title>
+	<link rel="stylesheet" type="text/css" href="lab6.css"/>
+</head>
+<body>
+	<div class="Blocks">
+		<div class="Head">
+			<button id = "Header" onclick="LeftClick()"> Левая колонка </button>
+			<button id = "Header" onclick="CenterClick()"> Обе две </button>
+			<button id = "Header" onclick="RightClick()"> Правая колонка </button>
+		</div>
+		<div class="BlockPicture">
+			<div id="LeftCat">
+				<img id="img1" src="cat.jpg" alt="logo picture" width="60%" />
+			</div>
+			<div id="RightDog">
+				<img id="img2" src="dog.jpg" alt="logo picture" width="60%" />
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		/*
+		document.querySelectorAll('.Header')[0].oncliсk = function() {LeftClick()};
+        document.querySelectorAll('.Header')[1].oncliсk = function() {CenterClick()};
+        document.querySelectorAll('.Header')[2].oncliсk = function() {RightClick()};
+        function LeftClick(){
+                    document.getElementsByClassName("RightDog").querySelector('img2').style.display = 'none';
+                    document.getElementsByClassName("LeftCat").querySelector('img1').style.display = 'block';
+            }
+        function CenterClick(){
+                    document.getElementsByClassName("RightDog").querySelector('img2').style.display = 'block';
+                    document.getElementsByClassName("LeftCat").querySelector('img1').style.display = 'block';
+            }
+        function RightClick(){
+                    document.getElementById('first').querySelector('img').style.display = 'none';
+                    document.getElementById('second').querySelector('img').style.display = '';
+                    document.getElementById('first').style.width = '100px';
+                    document.getElementById('second').style.width = '800px';
+            }*/
+
+
+		function LeftClick() {
+			document.getElementsById("LeftCat").style.width = "652px";
+			document.getElementsById("RightDog").style.width = "20px";
+			document.getElementsById("img1").style.display = "block"; 
+			document.getElementsById("img2").style.display = "none";
+		}
+		function CenterClick() {
+			document.getElementsById("LeftCat").style.width = "336px";
+			document.getElementsById("RightDog").style.width = "336px";
+			document.getElementsById("img1").style.display = "block"; 
+			document.getElementsById("img2").style.display = "block";			
+		}
+		function RightClick() {
+			document.getElementsById("LeftCat").style.width = "20px";
+			document.getElementsById("RightDog").style.width = "652px";
+			document.getElementsById("img1").style.display = "none"; 
+			document.getElementsById("img2").style.display = "block";
+		}
+	</script>
+</body>
