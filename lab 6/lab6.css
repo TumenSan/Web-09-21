@@ -13,7 +13,7 @@ body {
 	color: white;
 	font-size: 22px;
 	height: 50px;
-	width: 216px;
+	width: 217px;
 	border: 2px solid black;
 	text-align: center;
 }
@@ -23,7 +23,8 @@ body {
 .BlockPicture {
 	display: flex;
 	width: 650px;
-	margin-left: 26%;
+	margin-left: auto;
+	margin-right: auto;
 }
 #LeftCat {
 	background-color: blue;
