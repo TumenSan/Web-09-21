@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>lab 8</title>
+    <link rel="stylesheet" type="text/css" href="lab8.css" />
+</head>
+
+<body>
+    <input type="text" class="FirstInput">
+    <input type="text" class="SecondInput">
+    <button class="Delete1" onclick="Delete()"> x </button> </br>
+    <button class="Add1" onclick="Add()"> Добавить элемент </button> </br>
+    <button class="Save1" onclick="Save()"> Сохранить </button>
+    <script>
+        let i = 0;
+        function Save() {
+            let Text1 = document.getElementsByClassName('FirstInput')[0].value;
+            let Text2 = document.getElementsByClassName('SecondInput')[0].value;
+            let TextOutput = document.createElement('div');
+            TextOutput.innerHTML = Text1 + Text2;     //wrap ???
+            document.body.append(TextOutput);       //append??? how?
+        }
+        function Delete() {
+            let Elem1 = document.getElementsByClassName('FirstInput')[0];
+            let Elem2 = document.getElementsByClassName('SecondInput')[0];
+            let Elem3 = document.getElementsByClassName('Delete1')[0];
+            Elem1.remove();
+            Elem2.remove();
+            Elem3.remove();
+        }
+        function Add() {
+            let FirstInputAdd = document.createElement('input');
+            let SecondInputAdd = document.createElement('input');
+            let DeleteAdd = document.createElement('button');
+            DeleteAdd.innerHTML = i;
+            DeleteAdd.onclick = function(){
+                FirstInputAdd.remove();
+                SecondInputAdd.remove();
+                DeleteAdd.remove();
+            }
+            document.body.append(FirstInputAdd);
+            document.body.append(SecondInputAdd);
+            document.body.append(DeleteAdd);
+            ++i;
+        }
+    </script>
+</body>
+
+</html>
