@@ -1,3 +1,8 @@
 *{
     margin:0;
 }
+#Blocks{
+    display: block;
+    width: 400px;
+    flex-wrap: wrap;
+}
