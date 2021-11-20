@@ -17,13 +17,13 @@
     </div>
     <button class="Add" onclick="Add()"> Добавить элемент </button> </br>
     <button class="Save" onclick="Save()"> Сохранить </button>
-    
+
     <script>
         var FirstIn = "FirstInput";
         var SecondIn = "SecondInput";
         var Del = "Delete";
         var i = 0;
-        var Count = 0;
+        var Count = 1;
         function Save() {
 
             var TextOutput = document.createElement('div');
@@ -40,8 +40,11 @@
 
             ++FoundNextId;
             for (var j = 1; j < Count; j++) {
-                while (document.getElementById(FoundNextId) == undefined) {
+                console.log("!!!");
+                console.log(Count);
+                while ((document.getElementById(FoundNextId) == undefined) && (FoundNextId < 20)) {
                     ++FoundNextId;
+                    console.log(FoundNextId);
                 }
 
                 var Text1 = document.getElementById(FirstIn + FoundNextId).value;
@@ -65,7 +68,7 @@
 
         function Add() {
             i += 1;
-            Count = Number(i) + Number(1);
+            ++Count;
             console.log(Count);
             var FirstInputAdd = document.createElement('input');
             FirstInputAdd.className = 'Blocks';
