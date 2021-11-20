@@ -1,8 +1,11 @@
 *{
     margin:0;
 }
-#Blocks{
+body{
     display: block;
-    width: 400px;
+    width: 500px;
     flex-wrap: wrap;
+}
+.Blocks{
+    
 }

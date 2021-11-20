@@ -8,64 +8,85 @@
 </head>
 
 <body>
-    <div id="Blocks">
-        <input type="text" class="FirstInput" id="0">
-        <input type="text" class="SecondInput" id="0">
-        <button class="Delete1" id="0" onclick="Delete()"> x </button> </br>
+    <div class="Blocks">
+        <input type="text" id="FirstInput0">
+        <input type="text" id="SecondInput0">
+        <button id="FirstUp0" onclick="Up(0)"> U </button>
+        <button id="FirstDown0" onclick="Down(0)"> D </button>
+        <button id="0" onclick="Delete(0)"> x </button> </br>
     </div>
-    <button class="Add1" id="0" onclick="Add()"> Добавить элемент </button> </br>
-    <button class="Save1" id="0" onclick="Save()"> Сохранить </button>
+    <button class="Add" onclick="Add()"> Добавить элемент </button> </br>
+    <button class="Save" onclick="Save()"> Сохранить </button>
+    
     <script>
+        var FirstIn = "FirstInput";
+        var SecondIn = "SecondInput";
+        var Del = "Delete";
         var i = 0;
         var Count = 0;
         function Save() {
-            /*
-            let TextOutput = document.createElement('div');
-            TextOutput.innerHTML = "+";
-            for (var j = 0; j < (i + 1); j++){
-                let Text1 = document.getElementsByClassName('FirstInput')[j].value;
-                let Text2 = document.getElementsByClassName('SecondInput')[j].value;
-                TextOutput.innerHTML += (Text1 + Text2); //wrap ???
-                console.log(j);
+
+            var TextOutput = document.createElement('div');
+            console.log(i);
+            var FoundNextId = 0;
+            while (document.getElementById(FoundNextId) == undefined) {
+                console.log(FoundNextId);
+                FoundNextId += 1;
             }
-            document.body.append(TextOutput);       //append??? how?
-            */
-            let TextOutput = document.createElement('div');
-            TextOutput.innerHTML = "+";
-            let Text1 = document.getElementsByClassName('FirstInput')[0].value;
-            let Text2 = document.getElementsByClassName('SecondInput')[0].value;
-            TextOutput.innerHTML += (Text1 + Text2); //wrap ???
-            document.body.append(TextOutput); 
+            var Text1 = document.getElementById(FirstIn + FoundNextId).value;
+            var Text2 = document.getElementById(SecondIn + FoundNextId).value;
+            TextOutput.innerHTML += ('{' + '"' + Text1 + '"' + ":");
+            TextOutput.innerHTML += ('"' + Text2 + '"');
+
+            ++FoundNextId;
+            for (var j = 1; j < Count; j++) {
+                while (document.getElementById(FoundNextId) == undefined) {
+                    ++FoundNextId;
+                }
+
+                var Text1 = document.getElementById(FirstIn + FoundNextId).value;
+                var Text2 = document.getElementById(SecondIn + FoundNextId).value;
+                TextOutput.innerHTML += ("," + '"' + Text1 + '"' + ":");
+                TextOutput.innerHTML += ('"' + Text2 + '"');
+                ++FoundNextId;
+                console.log(FoundNextId);
+            }
+            TextOutput.innerHTML += ("}");
+            document.body.append(TextOutput);
+            FoundNextId = 0;
         }
-        function Delete() {
-            let Elem1 = document.getElementsByClassName('FirstInput')[i];
-            let Elem2 = document.getElementsByClassName('SecondInput')[i];
-            let Elem3 = document.getElementsByClassName('Delete1')[i];
-            Elem1.remove();
-            Elem2.remove();
-            Elem3.remove();
+
+        function Delete(deleteid) {
+            --Count;
+            document.getElementById(deleteid).remove();
+            document.getElementById(FirstIn + deleteid).remove();
+            document.getElementById(SecondIn + deleteid).remove();
         }
+
         function Add() {
-            Count += 1;
             i += 1;
-            let FirstInputAdd = document.createElement('input');
-            FirstInputAdd.id = i;
-            FirstInputAdd.className = "FirstInput";
-            let SecondInputAdd = document.createElement('input');
-            SecondInputAdd.id = i;
-            FirstInputAdd.className = "SecondInput";
-            let Blocks = document.getElementById('Blocks');
+            Count = Number(i) + Number(1);
+            console.log(Count);
+            var FirstInputAdd = document.createElement('input');
+            FirstInputAdd.className = 'Blocks';
+            FirstInputAdd.id = FirstIn + i;
+            var SecondInputAdd = document.createElement('input');
+            SecondInputAdd.className = 'Blocks';
+            SecondInputAdd.id = SecondIn + i;
+            var Blocks = document.getElementsByClassName('Blocks')[0];
             Blocks.append(FirstInputAdd);
             Blocks.append(SecondInputAdd);
 
-            let DeleteAdd = document.createElement('button');
+            var DeleteAdd = document.createElement('button');
             DeleteAdd.id = i;
-            DeleteAdd.className = "Delete1";
-            DeleteAdd.innerHTML = i;
-            //DeleteAdd.onclick = Delete();
-            
+            DeleteAdd.className = 'Blocks';
+            //DeleteAdd.innerHTML = i;
+            DeleteAdd.innerHTML = "x";
+            DeleteAdd.onclick = function () {
+                Delete(DeleteAdd.id);
+            }
+
             Blocks.append(DeleteAdd);  //new text
-            console.log(i);
         }
     </script>
 </body>
