@@ -1,3 +1,11 @@
 *{
     margin:0;
 }
+body{
+    display: block;
+    width: 500px;
+    flex-wrap: wrap;
+}
+.Blocks{
+    
+}
