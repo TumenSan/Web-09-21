@@ -9,11 +9,12 @@
 
 <body>
     <div class="Blocks">
+        <!--
         <input type="text" id="FirstInput0">
         <input type="text" id="SecondInput0">
-        <button id="FirstUp0" onclick="Up(0)"> U </button>
-        <button id="FirstDown0" onclick="Down(0)"> D </button>
-        <button id="0" onclick="Delete(0)"> x </button> </br>
+        <button id="0UpButton" onclick="Up(0)"> &#8593; </button>
+        <button id="0DownButton" onclick="Down(0)"> &#8595; </button>
+        <button id="0" onclick="Delete(0)"> x </button> </br>-->
     </div>
     <button class="Add" onclick="Add()"> Добавить элемент </button> </br>
     <button class="Save" onclick="Save()"> Сохранить </button>
@@ -21,9 +22,16 @@
     <script>
         var FirstIn = "FirstInput";
         var SecondIn = "SecondInput";
+        var FirstId = 0;
+        var LastId = 0;
+        var UpB = "UpButton";
+        var DownB = "DownButton";
         var Del = "Delete";
-        var i = 0;
-        var Count = 1;
+        var i = -1;
+        var Count = 0;
+        var IdMas = [];
+        Add();
+
         function Save() {
 
             var TextOutput = document.createElement('div');
@@ -59,37 +67,132 @@
             FoundNextId = 0;
         }
 
+        function Up(upid) {
+            Id = upid.toString();
+            console.log("downid");
+            console.log(Id);
+            console.log(Id[0]);
+            console.log(typeof Id);
+            let k = 0;
+            let str = "";
+            while ((Number(Id[k]) >= Number(0)) && (Number(Id[k]) <= Number(9))){
+                console.log("Ok");
+                str = str + Id[k];
+                ++k;
+                console.log(str);
+            }
+            let FoundNextId = Number(str) - Number(1);
+            while (document.getElementById(FoundNextId) == undefined) {
+                console.log(FoundNextId);
+                FoundNextId -= 1;
+            }
+            console.log("!!");
+            console.log(FoundNextId);
+            console.log(str);
+            let Text1 = document.getElementById(SecondIn + FoundNextId).value;
+            document.getElementById(SecondIn + FoundNextId).value = document.getElementById(SecondIn + str).value;
+            document.getElementById(SecondIn + str).value = Text1;
+            let Text2 = document.getElementById(FirstIn + FoundNextId).value;
+            document.getElementById(FirstIn + FoundNextId).value = document.getElementById(FirstIn + str).value;
+            document.getElementById(FirstIn + str).value = Text2;
+        }
+
+        function Down(downid) {
+            Id = downid.toString();
+            console.log("downid");
+            console.log(Id);
+            console.log(Id[0]);
+            console.log(typeof Id);
+            let k = 0;
+            let str = "";
+            while ((Number(Id[k]) >= Number(0)) && (Number(Id[k]) <= Number(9))){
+                console.log("Ok");
+                str = str + Id[k];
+                ++k;
+                console.log(str);
+            }
+            let FoundNextId = Number(str) + Number(1);
+
+            while (document.getElementById(FoundNextId) == undefined) {
+                console.log(FoundNextId);
+                FoundNextId += 1;
+            }
+            console.log("!!");
+            console.log(FoundNextId);
+            console.log(str);
+            let Text1 = document.getElementById(SecondIn + FoundNextId).value;
+            document.getElementById(SecondIn + FoundNextId).value = document.getElementById(SecondIn + str).value;
+            document.getElementById(SecondIn + str).value = Text1;
+            let Text2 = document.getElementById(FirstIn + FoundNextId).value;
+            document.getElementById(FirstIn + FoundNextId).value = document.getElementById(FirstIn + str).value;
+            document.getElementById(FirstIn + str).value = Text2;
+        }
+
         function Delete(deleteid) {
+            console.log(IdMas);
+            IdMas.splice(deleteid, 1);
+            console.log(IdMas);
             --Count;
-            document.getElementById(deleteid).remove();
+            if(deleteid == LastId){
+                let FoundNextId = Number(deleteid) - Number(1);
+                while (document.getElementById(FoundNextId) == undefined) {
+                    console.log(FoundNextId);
+                    FoundNextId -= 1;
+                }
+                LastId = Number(FoundNextId);
+            }
             document.getElementById(FirstIn + deleteid).remove();
             document.getElementById(SecondIn + deleteid).remove();
+            document.getElementById(deleteid + UpB).remove();
+            document.getElementById(deleteid + DownB).remove();
+            document.getElementById(deleteid).remove();
         }
 
         function Add() {
-            i += 1;
+            ++i;
+            IdMas.push(i);
+            LastId = i;
             ++Count;
             console.log(Count);
             var FirstInputAdd = document.createElement('input');
-            FirstInputAdd.className = 'Blocks';
+            //FirstInputAdd.className = 'Blocks';
             FirstInputAdd.id = FirstIn + i;
             var SecondInputAdd = document.createElement('input');
-            SecondInputAdd.className = 'Blocks';
+            //SecondInputAdd.className = 'Blocks';
             SecondInputAdd.id = SecondIn + i;
             var Blocks = document.getElementsByClassName('Blocks')[0];
             Blocks.append(FirstInputAdd);
             Blocks.append(SecondInputAdd);
 
+            var UpAdd = document.createElement('button');
+            UpAdd.id = i + UpB;
+            //UpAdd.className = 'Blocks';
+            //UpAdd.innerHTML = i;
+            UpAdd.innerHTML = "&#8593";
+            UpAdd.onclick = function () {
+                Up(UpAdd.id);
+            }
+            Blocks.append(UpAdd);
+
+            var DownAdd = document.createElement('button');
+            DownAdd.id = i + DownB;
+            //DownAdd.className = 'Blocks';
+            //DownAdd.innerHTML = i;
+            DownAdd.innerHTML = "&#8595";
+            DownAdd.onclick = function () {
+                Down(DownAdd.id);
+            }
+            Blocks.append(DownAdd);
+
             var DeleteAdd = document.createElement('button');
             DeleteAdd.id = i;
-            DeleteAdd.className = 'Blocks';
+            //DeleteAdd.className = 'Blocks';
             //DeleteAdd.innerHTML = i;
             DeleteAdd.innerHTML = "x";
             DeleteAdd.onclick = function () {
                 Delete(DeleteAdd.id);
             }
-
-            Blocks.append(DeleteAdd);  //new text
+            Blocks.append(DeleteAdd);
         }
     </script>
 </body>
