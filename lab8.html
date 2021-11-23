@@ -22,125 +22,97 @@
     <script>
         var FirstIn = "FirstInput";
         var SecondIn = "SecondInput";
-        var FirstId = 0;
-        var LastId = 0;
         var UpB = "UpButton";
         var DownB = "DownButton";
         var Del = "Delete";
         var i = -1;
         var Count = 0;
-        var IdMas = [];
         Add();
 
         function Save() {
-
-            var TextOutput = document.createElement('div');
-            console.log(i);
-            var FoundNextId = 0;
-            while (document.getElementById(FoundNextId) == undefined) {
-                console.log(FoundNextId);
-                FoundNextId += 1;
-            }
-            var Text1 = document.getElementById(FirstIn + FoundNextId).value;
-            var Text2 = document.getElementById(SecondIn + FoundNextId).value;
-            TextOutput.innerHTML += ('{' + '"' + Text1 + '"' + ":");
-            TextOutput.innerHTML += ('"' + Text2 + '"');
-
-            ++FoundNextId;
-            for (var j = 1; j < Count; j++) {
-                console.log("!!!");
-                console.log(Count);
-                while ((document.getElementById(FoundNextId) == undefined) && (FoundNextId < 20)) {
-                    ++FoundNextId;
-                    console.log(FoundNextId);
+            if (Count > 0){
+                var TextOutput = document.createElement('div');
+                var FoundNextId = 0;
+                while (document.getElementById(FoundNextId) == undefined) {
+                    FoundNextId += 1;
                 }
-
                 var Text1 = document.getElementById(FirstIn + FoundNextId).value;
                 var Text2 = document.getElementById(SecondIn + FoundNextId).value;
-                TextOutput.innerHTML += ("," + '"' + Text1 + '"' + ":");
+                TextOutput.innerHTML += ('{' + '"' + Text1 + '"' + ":");
                 TextOutput.innerHTML += ('"' + Text2 + '"');
+
                 ++FoundNextId;
-                console.log(FoundNextId);
+                for (var j = 1; j < Count; j++) {
+                    while ((document.getElementById(FoundNextId) == undefined) && (FoundNextId < 20)) {
+                        ++FoundNextId;
+                    }
+
+                    var Text1 = document.getElementById(FirstIn + FoundNextId).value;
+                    var Text2 = document.getElementById(SecondIn + FoundNextId).value;
+                    TextOutput.innerHTML += ("," + '"' + Text1 + '"' + ":");
+                    TextOutput.innerHTML += ('"' + Text2 + '"');
+                    ++FoundNextId;
+                }
+                TextOutput.innerHTML += ("}");
+                document.body.append(TextOutput);
+                FoundNextId = 0;
             }
-            TextOutput.innerHTML += ("}");
-            document.body.append(TextOutput);
-            FoundNextId = 0;
         }
 
         function Up(upid) {
             Id = upid.toString();
-            console.log("downid");
-            console.log(Id);
-            console.log(Id[0]);
-            console.log(typeof Id);
             let k = 0;
             let str = "";
-            while ((Number(Id[k]) >= Number(0)) && (Number(Id[k]) <= Number(9))){
-                console.log("Ok");
+            while ((Number(Id[k]) >= Number(0)) && (Number(Id[k]) <= Number(9))) {
                 str = str + Id[k];
                 ++k;
                 console.log(str);
             }
             let FoundNextId = Number(str) - Number(1);
-            while (document.getElementById(FoundNextId) == undefined) {
+
+            if (document.querySelector('.Del').id != str) {
+                while (document.getElementById(FoundNextId) == undefined) {
+                    console.log(FoundNextId);
+                    FoundNextId -= 1;
+                }
+                console.log("!!");
                 console.log(FoundNextId);
-                FoundNextId -= 1;
+                console.log(str);
+                let Text1 = document.getElementById(SecondIn + FoundNextId).value;
+                document.getElementById(SecondIn + FoundNextId).value = document.getElementById(SecondIn + str).value;
+                document.getElementById(SecondIn + str).value = Text1;
+                let Text2 = document.getElementById(FirstIn + FoundNextId).value;
+                document.getElementById(FirstIn + FoundNextId).value = document.getElementById(FirstIn + str).value;
+                document.getElementById(FirstIn + str).value = Text2;
             }
-            console.log("!!");
-            console.log(FoundNextId);
-            console.log(str);
-            let Text1 = document.getElementById(SecondIn + FoundNextId).value;
-            document.getElementById(SecondIn + FoundNextId).value = document.getElementById(SecondIn + str).value;
-            document.getElementById(SecondIn + str).value = Text1;
-            let Text2 = document.getElementById(FirstIn + FoundNextId).value;
-            document.getElementById(FirstIn + FoundNextId).value = document.getElementById(FirstIn + str).value;
-            document.getElementById(FirstIn + str).value = Text2;
         }
 
         function Down(downid) {
             Id = downid.toString();
-            console.log("downid");
-            console.log(Id);
-            console.log(Id[0]);
-            console.log(typeof Id);
             let k = 0;
             let str = "";
-            while ((Number(Id[k]) >= Number(0)) && (Number(Id[k]) <= Number(9))){
-                console.log("Ok");
+            while ((Number(Id[k]) >= Number(0)) && (Number(Id[k]) <= Number(9))) {
                 str = str + Id[k];
                 ++k;
                 console.log(str);
             }
             let FoundNextId = Number(str) + Number(1);
 
-            while (document.getElementById(FoundNextId) == undefined) {
-                console.log(FoundNextId);
-                FoundNextId += 1;
+            if (document.querySelector('.Del:last-child').id != str) {
+                while (document.getElementById(FoundNextId) == undefined) {
+                    FoundNextId += 1;
+                }
+                let Text1 = document.getElementById(SecondIn + FoundNextId).value;
+                document.getElementById(SecondIn + FoundNextId).value = document.getElementById(SecondIn + str).value;
+                document.getElementById(SecondIn + str).value = Text1;
+                let Text2 = document.getElementById(FirstIn + FoundNextId).value;
+                document.getElementById(FirstIn + FoundNextId).value = document.getElementById(FirstIn + str).value;
+                document.getElementById(FirstIn + str).value = Text2;
             }
-            console.log("!!");
-            console.log(FoundNextId);
-            console.log(str);
-            let Text1 = document.getElementById(SecondIn + FoundNextId).value;
-            document.getElementById(SecondIn + FoundNextId).value = document.getElementById(SecondIn + str).value;
-            document.getElementById(SecondIn + str).value = Text1;
-            let Text2 = document.getElementById(FirstIn + FoundNextId).value;
-            document.getElementById(FirstIn + FoundNextId).value = document.getElementById(FirstIn + str).value;
-            document.getElementById(FirstIn + str).value = Text2;
         }
 
         function Delete(deleteid) {
-            console.log(IdMas);
-            IdMas.splice(deleteid, 1);
-            console.log(IdMas);
             --Count;
-            if(deleteid == LastId){
-                let FoundNextId = Number(deleteid) - Number(1);
-                while (document.getElementById(FoundNextId) == undefined) {
-                    console.log(FoundNextId);
-                    FoundNextId -= 1;
-                }
-                LastId = Number(FoundNextId);
-            }
             document.getElementById(FirstIn + deleteid).remove();
             document.getElementById(SecondIn + deleteid).remove();
             document.getElementById(deleteid + UpB).remove();
@@ -150,15 +122,10 @@
 
         function Add() {
             ++i;
-            IdMas.push(i);
-            LastId = i;
             ++Count;
-            console.log(Count);
             var FirstInputAdd = document.createElement('input');
-            //FirstInputAdd.className = 'Blocks';
             FirstInputAdd.id = FirstIn + i;
             var SecondInputAdd = document.createElement('input');
-            //SecondInputAdd.className = 'Blocks';
             SecondInputAdd.id = SecondIn + i;
             var Blocks = document.getElementsByClassName('Blocks')[0];
             Blocks.append(FirstInputAdd);
@@ -167,7 +134,6 @@
             var UpAdd = document.createElement('button');
             UpAdd.id = i + UpB;
             //UpAdd.className = 'Blocks';
-            //UpAdd.innerHTML = i;
             UpAdd.innerHTML = "&#8593";
             UpAdd.onclick = function () {
                 Up(UpAdd.id);
@@ -176,8 +142,6 @@
 
             var DownAdd = document.createElement('button');
             DownAdd.id = i + DownB;
-            //DownAdd.className = 'Blocks';
-            //DownAdd.innerHTML = i;
             DownAdd.innerHTML = "&#8595";
             DownAdd.onclick = function () {
                 Down(DownAdd.id);
@@ -186,7 +150,7 @@
 
             var DeleteAdd = document.createElement('button');
             DeleteAdd.id = i;
-            //DeleteAdd.className = 'Blocks';
+            DeleteAdd.className = 'Del';
             //DeleteAdd.innerHTML = i;
             DeleteAdd.innerHTML = "x";
             DeleteAdd.onclick = function () {
