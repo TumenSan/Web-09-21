@@ -1,0 +1,55 @@
+.Border1{
+    width: 300px;
+    height: 300px;
+    border: 4px solid blue;
+}
+.Border2{
+    width: 272px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid grey;
+    flex-direction: row;
+}
+.Labels{
+    width: 20px;
+    height: 30px;
+    font-size: 21px;
+}
+.Buttons{
+    flex-direction: row;
+    margin-top: 5px;
+    width: 52px;
+    height: 50px;
+    font-size: 19px;
+}
+/*
+#Input1{
+    width: 268px;
+    height: 30px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+#Button7{
+    margin-left: 12px;
+}
+#Button4{
+    margin-left: 12px;
+}
+#Button1{
+    margin-left: 12px;
+}
+#ButtonEqual{
+    margin-top: 5px;
+    width: 52px;
+    height: 100px;
+    /*display: block;*/
+    font-size: 19px;
+}
+#Button0{
+    margin-left: 12px;
+    width: 108px;
+}
