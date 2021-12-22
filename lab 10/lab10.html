@@ -10,41 +10,50 @@
     <div class="Light">
         <img id="LampPicture" src="lamp.png">
         <img id="TurnPicture" src="turn.png">
+        <div id="LampPlace"></div>
     </div>
     <div id="Triangle"></div>
     <div class="Focus">
         <img id="GirlPicture" src="girl.png">
         <img id="HatPicture" src="hat.png">
+        <div id="HatPlace"></div>
+        <img id="Animal1Picture" src="animal1.png">
+        <img id="Animal2Picture" src="animal2.png">
     </div>
-    <!--<div id="Back1" style="width: 1250px;">  </div>-->
-    <!--<script src="lab10.js"></script>-->
+
     <script>
         let BackHtml = document.getElementById("main");
         let Light = document.getElementsByClassName("Light");
         let Lamp = document.getElementById("LampPicture");
         let Turn = document.getElementById("TurnPicture");
+        let LampPlace = document.getElementById("LampPlace");
         let Triangle = document.getElementById("Triangle");
         let Girl = document.getElementById("GirlPicture");
         let Hat = document.getElementById("HatPicture");
+        let HatPlace = document.getElementById("HatPlace");
+        let Animal = document.getElementById("Animal1Picture");
+        //let Animal1 = document.getElementById("Animal1Picture");
+        //let Animal2 = document.getElementById("Animal2Picture");
         BackHtml.onclick = function () {
             this.style.transition = '.5s';
             this.style.backgroundPositionY = '-1600px';
             Lamp.style.display = 'block';
             Turn.style.display = 'block';
         }
-        let Flag1 = false;
+        let FlagLamp = false;
         Lamp.onclick = function () {
-            if (Flag1 == false){
-                Triangle.style.opacity = '0.5';
+            if (FlagLamp == false){
+                Triangle.style.display = 'block';
                 Girl.style.display = 'block';
                 Hat.style.display = 'block';
-                Flag1 = true;
+                FlagLamp = true;
             }
             else {
-                Triangle.style.opacity = '0';
+                Triangle.style.display = 'none';
                 Girl.style.display = 'none';
                 Hat.style.display = 'none';
-                Flag1 = false;
+                Animal.style.display = 'none';
+                FlagLamp = false;
             }
         }
         Lamp.onmouseup = function(){
@@ -53,8 +62,19 @@
         Lamp.onmousedown = function(){
             Turn.style.marginTop = '20px';
         };
-        Hat.onclick = function () {
-            
+        let Rabbit = false;
+        HatPlace.onclick = function () {
+            if (Rabbit == false){
+                console.log(123);
+                Animal.style.display = 'block';
+                setTimeout("Animal.src = 'animal1.png', Animal.style.marginTop = '-100px'", 1000);
+                Rabbit = true;
+            }
+            else{
+                setTimeout("Animal.src = 'animal2.png', Animal.style.marginTop = '-100px'", 1000);
+                Rabbit = false;
+            }
+            Animal.style.transition = '0.3s';
         }
     </script>
 </body>
