@@ -1,0 +1,53 @@
+<html id="main" style="width: 1250px;">
+
+<head>
+    <title> lab 10 </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="lab10.css" />
+</head>
+
+<body>
+    <div class="Light">
+        <img id="LampPicture" src="lamp.png">
+        <img id="TurnPicture" src="turn.png">
+    </div>
+    <div id="Triangle"></div>
+    <div class="Focus">
+        <img id="GirlPicture" src="girl.png">
+        <img id="HatPicture" src="hat.png">
+    </div>
+    <!--<div id="Back1" style="width: 1250px;">  </div>-->
+    <!--<script src="lab10.js"></script>-->
+    <script>
+        let BackHtml = document.getElementById("main");
+        let Light = document.getElementsByClassName("Light");
+        let Lamp = document.getElementById("LampPicture");
+        let Turn = document.getElementById("TurnPicture");
+        let Triangle = document.getElementById("Triangle");
+        let Girl = document.getElementById("GirlPicture");
+        let Hat = document.getElementById("HatPicture");
+        BackHtml.onclick = function () {
+            this.style.transition = '.5s';
+            this.style.backgroundPositionY = '-1600px';
+            Lamp.style.display = 'block';
+            Turn.style.display = 'block';
+        }
+        let Flag1 = false;
+        Light[0].onclick = function () {
+            if (Flag1 == false){
+                Triangle.style.opacity = '0.5';
+                Girl.style.display = 'block';
+                Hat.style.display = 'block';
+                Flag1 = true;
+            }
+            else {
+                Triangle.style.opacity = '0';
+                Girl.style.display = 'none';
+                Hat.style.display = 'none';
+                Flag1 = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
