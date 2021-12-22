@@ -33,7 +33,7 @@
             Turn.style.display = 'block';
         }
         let Flag1 = false;
-        Light[0].onclick = function () {
+        Lamp.onclick = function () {
             if (Flag1 == false){
                 Triangle.style.opacity = '0.5';
                 Girl.style.display = 'block';
@@ -46,6 +46,15 @@
                 Hat.style.display = 'none';
                 Flag1 = false;
             }
+        }
+        Lamp.onmouseup = function(){
+            Turn.style.marginTop = '0px';
+        };
+        Lamp.onmousedown = function(){
+            Turn.style.marginTop = '20px';
+        };
+        Hat.onclick = function () {
+            
         }
     </script>
 </body>
